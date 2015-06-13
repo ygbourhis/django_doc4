@@ -1,0 +1,554 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Doc4\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-06-21 17:38+0200\n"
+"PO-Revision-Date: 2011-06-21 17:43+0100\n"
+"Last-Translator: Yves-Gwenael Bourhis <ybourhis@mandriva.com>\n"
+"Language-Team: Yves-Gwenael Bourhis <ybourhis@mandriva.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1)\n"
+"X-Poedit-Language: French\n"
+"X-Poedit-Country: FRANCE\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+#: forms.py:33
+msgid "Provider"
+msgstr "Fournisseur"
+
+#: forms.py:34
+msgid "Distribution"
+msgstr "Distribution"
+
+#: forms.py:35
+#: templates/doc4/package_detail.html:25
+msgid "Architecture"
+msgstr "Architecture"
+
+#: forms.py:36
+msgid "Branch"
+msgstr "Branche"
+
+#: forms.py:37
+msgid "Section"
+msgstr "Section"
+
+#: forms.py:41
+msgid "Category"
+msgstr "Catégorie"
+
+#: forms.py:42
+msgid "Top Category"
+msgstr "Catégorie mère"
+
+#: forms.py:68
+msgid "Containing files named"
+msgstr "Contenant les fichiers"
+
+#: forms.py:69
+msgid "Containing Path named"
+msgstr "Contenant en arborescence de répertoire"
+
+#: forms.py:70
+msgid "Named"
+msgstr "Nommés"
+
+#: forms.py:71
+msgid "In Category"
+msgstr "dans la Catégorie"
+
+#: forms.py:72
+msgid "In Repository"
+msgstr "dans le Dépot"
+
+#: forms.py:76
+msgid "Search for Packages"
+msgstr "Chercher les paquages"
+
+#: forms.py:77
+msgid ": "
+msgstr ": "
+
+#: templates/main_menu.html:5
+#: templates/package_menu.html:6
+msgid "Home"
+msgstr "Page Principale"
+
+#: templates/main_menu.html:6
+#: templates/doc4/package_list.html:44
+msgid "Repositories"
+msgstr "Dépots"
+
+#: templates/main_menu.html:10
+msgid "Filter by:"
+msgstr "Filtrer par:"
+
+#: templates/main_menu.html:13
+msgid "Filter"
+msgstr "Filtrer"
+
+#: templates/main_menu.html:15
+#: templates/main_menu.html.py:24
+msgid "Apply"
+msgstr "Appliquer"
+
+#: templates/main_menu.html:21
+msgid "Filter Suggestion (click to show)"
+msgstr "Suggestion de filtre (cliquez pour visualiser)"
+
+#: templates/package_menu.html:8
+#: templates/package_menu.html.py:18
+msgid "Details"
+msgstr "Détails"
+
+#: templates/package_menu.html:9
+#: templates/package_menu.html.py:19
+msgid "Files"
+msgstr "Fichiers"
+
+#: templates/package_menu.html:10
+#: templates/package_menu.html.py:20
+msgid "Provides"
+msgstr "Fournit"
+
+#: templates/package_menu.html:11
+#: templates/package_menu.html.py:21
+msgid "Requires"
+msgstr "Dépend de"
+
+#: templates/package_menu.html:12
+#: templates/package_menu.html.py:22
+msgid "Obsoletes"
+msgstr "Rend obsolète"
+
+#: templates/package_menu.html:13
+#: templates/package_menu.html.py:23
+msgid "Conflicts"
+msgstr "Conflits"
+
+#: templates/package_menu.html:14
+#: templates/package_menu.html.py:24
+msgid "Suggests"
+msgstr "Suggère"
+
+#: templates/package_menu.html:15
+#: templates/package_menu.html.py:25
+msgid "Scripts"
+msgstr "Scripts"
+
+#: templates/package_menu.html:16
+#: templates/package_menu.html.py:26
+msgid "Changelog"
+msgstr "Historique des modifications"
+
+#: templates/package_menu.html:34
+msgid "Install"
+msgstr "Installer"
+
+#: templates/package_menu.html:40
+msgid "Export all package details as:"
+msgstr "Exporter les résultats au format :"
+
+#: templates/package_menu.html:45
+#: templates/package_menu.html.py:50
+msgid "Python pickle object"
+msgstr "Python pickle object"
+
+#: templates/doc4/changelog_detail.html:5
+#, python-format
+msgid "%(name)s Changelog"
+msgstr "Historique des modifications pour %(name)s"
+
+#: templates/doc4/changelog_detail.html:10
+msgid "Changelog:"
+msgstr "Historique des modifications:"
+
+#: templates/doc4/conflict_list.html:5
+#, python-format
+msgid "%(name)s conflicts"
+msgstr "Conflits avec %(name)s"
+
+#: templates/doc4/conflict_list.html:9
+#, python-format
+msgid "%(name)s Conflicts"
+msgstr "Conflits avec %(name)s"
+
+#: templates/doc4/conflict_list.html:10
+#, python-format
+msgid "%(name)s Conflicts:"
+msgstr "%(name)s entre en conflit avec:"
+
+#: templates/doc4/conflict_list.html:13
+#: templates/doc4/obsolete_list.html:13
+#: templates/doc4/provide_list.html:13
+#: templates/doc4/require_list.html:13
+#: templates/doc4/suggest_list.html:13
+msgid "Object"
+msgstr "Objet"
+
+#: templates/doc4/conflict_list.html:13
+#: templates/doc4/obsolete_list.html:13
+#: templates/doc4/package_detail.html:19
+#: templates/doc4/provide_list.html:13
+#: templates/doc4/require_list.html:13
+#: templates/doc4/suggest_list.html:13
+msgid "Version"
+msgstr "Version du logiciel"
+
+#: templates/doc4/conflict_list.html:13
+#: templates/doc4/obsolete_list.html:13
+#: templates/doc4/package_detail.html:20
+#: templates/doc4/provide_list.html:13
+#: templates/doc4/require_list.html:13
+#: templates/doc4/suggest_list.html:13
+msgid "Release"
+msgstr "Version du paquet"
+
+#: templates/doc4/conflict_list.html:13
+#: templates/doc4/obsolete_list.html:13
+#: templates/doc4/provide_list.html:13
+#: templates/doc4/require_list.html:13
+#: templates/doc4/suggest_list.html:13
+msgid "Flags"
+msgstr "Flags"
+
+#: templates/doc4/file_list.html:5
+#: templates/doc4/file_list.html.py:9
+#, python-format
+msgid "%(name)s files"
+msgstr "fichiers de %(name)s"
+
+#: templates/doc4/file_list.html:10
+#, python-format
+msgid "Files in %(name)s:"
+msgstr "Fichiers dans %(name)s :"
+
+#: templates/doc4/file_list.html:13
+msgid "File"
+msgstr "Fichier"
+
+#: templates/doc4/file_list.html:13
+msgid "Size"
+msgstr "Taille"
+
+#: templates/doc4/inunscript_detail.html:5
+#, python-format
+msgid "%(name)s Install/Uninstall Scripts"
+msgstr "Scripts de pré/poste-installation pour %(name)s"
+
+#: templates/doc4/inunscript_detail.html:10
+msgid "Pre-install script"
+msgstr "Script de pré-installation"
+
+#: templates/doc4/inunscript_detail.html:11
+msgid "Post-install script"
+msgstr "Script de poste-installation"
+
+#: templates/doc4/inunscript_detail.html:12
+msgid "Pre-uninstall script"
+msgstr "Script de pré-dés-installation"
+
+#: templates/doc4/inunscript_detail.html:13
+msgid "Post-uninstall script"
+msgstr "Script de poste-dés-installation"
+
+#: templates/doc4/obsolete_list.html:5
+#, python-format
+msgid "%(name)s obsoletes"
+msgstr "rendu obsolète par %(name)s"
+
+#: templates/doc4/obsolete_list.html:9
+#, python-format
+msgid "%(name)s Obsoletes"
+msgstr "Rendu obsolète par %(name)s"
+
+#: templates/doc4/obsolete_list.html:10
+#, python-format
+msgid "%(name)s Obsoletes:"
+msgstr "%(name)s rend obsolète:"
+
+#: templates/doc4/package_detail.html:5
+#, python-format
+msgid "%(name)s details"
+msgstr "Détails de %(name)s"
+
+#: templates/doc4/package_detail.html:10
+msgid "Package"
+msgstr "Paquetage"
+
+#: templates/doc4/package_detail.html:11
+msgid "Homepage"
+msgstr "Page Principale"
+
+#: templates/doc4/package_detail.html:12
+msgid "Author"
+msgstr "Auteur"
+
+#: templates/doc4/package_detail.html:13
+msgid "License"
+msgstr "License"
+
+#: templates/doc4/package_detail.html:14
+msgid "Package Size"
+msgstr "Taille du paquet"
+
+#: templates/doc4/package_detail.html:15
+msgid "Archive Size"
+msgstr "Taille de l'archive"
+
+#: templates/doc4/package_detail.html:16
+msgid "Installed Size"
+msgstr "Taille du paquet installé"
+
+#: templates/doc4/package_detail.html:17
+msgid "Group"
+msgstr "Groupe"
+
+#: templates/doc4/package_detail.html:18
+msgid "Epoch"
+msgstr "Temps Unix"
+
+#: templates/doc4/package_detail.html:21
+msgid "Build time"
+msgstr "Date de compilation"
+
+#: templates/doc4/package_detail.html:22
+msgid "Build host"
+msgstr "Machine de compilation"
+
+#: templates/doc4/package_detail.html:23
+msgid "Source package"
+msgstr "Paquetage source"
+
+#: templates/doc4/package_detail.html:24
+#: templates/doc4/package_list.html:44
+msgid "Summary"
+msgstr "Résumé"
+
+#: templates/doc4/package_detail.html:26
+msgid "Checksum"
+msgstr "Somme de contrôle"
+
+#: templates/doc4/package_list.html:5
+#: templates/doc4/repository_list.html:5
+msgid "Package list"
+msgstr "Liste de paquetages"
+
+#: templates/doc4/package_list.html:11
+msgid "Current Category"
+msgstr "Catégorie courante"
+
+#: templates/doc4/package_list.html:14
+msgid "Sub"
+msgstr "Sous"
+
+#: templates/doc4/package_list.html:14
+msgid "Categories"
+msgstr "Catégories"
+
+#: templates/doc4/package_list.html:28
+msgid "Search:"
+msgstr "Rechercher :"
+
+#: templates/doc4/package_list.html:30
+msgid "Search"
+msgstr "Rechercher"
+
+#: templates/doc4/package_list.html:40
+#: templates/doc4/package_list.html:41
+msgid "Packages"
+msgstr "Paquetages"
+
+#: templates/doc4/package_list.html:44
+msgid "Name"
+msgstr "Nom"
+
+#: templates/doc4/package_list.html:44
+msgid "rpm"
+msgstr "rpm"
+
+#: templates/doc4/provide_list.html:5
+#, python-format
+msgid "%(name)s provides"
+msgstr "Fourni par %(name)s"
+
+#: templates/doc4/provide_list.html:9
+#, python-format
+msgid "%(name)s Provides"
+msgstr "Fourni par %(name)s"
+
+#: templates/doc4/provide_list.html:10
+#, python-format
+msgid "%(name)s Provides:"
+msgstr "%(name)s fournit:"
+
+#: templates/doc4/repository_list.html:11
+msgid "Repositories:"
+msgstr "Dépots:"
+
+#: templates/doc4/repository_list.html:12
+msgid "repositories"
+msgstr "dépots"
+
+#: templates/doc4/repository_list.html:15
+msgid "Repository"
+msgstr "Dépot"
+
+#: templates/doc4/require_list.html:5
+#, python-format
+msgid "%(name)s requires"
+msgstr "requis par %(name)s"
+
+#: templates/doc4/require_list.html:9
+#, python-format
+msgid "%(name)s Requires"
+msgstr "Requis par %(name)s"
+
+#: templates/doc4/require_list.html:10
+#, python-format
+msgid "%(name)s Requires:"
+msgstr "%(name)s requière :"
+
+#: templates/doc4/suggest_list.html:5
+#: templates/doc4/suggest_list.html.py:9
+#, python-format
+msgid "%(name)s suggests"
+msgstr "suggéré par %(name)s"
+
+#: templates/doc4/suggest_list.html:10
+#, python-format
+msgid "%(name)s suggests:"
+msgstr "%(name)s suggère :"
+
+#: templates/doc4/tags/paging.html:6
+msgid "previous"
+msgstr "précédent"
+
+#: templates/doc4/tags/paging.html:10
+msgid "Page"
+msgstr "Page"
+
+#: templates/doc4/tags/paging.html:14
+msgid "next"
+msgstr "suivant"
+
+#: templatetags/doc4tags.py:40
+#: templatetags/doc4tags.py:44
+#: templatetags/doc4tags.py:45
+msgid "byte(s)"
+msgstr "octet(s)"
+
+#: templatetags/doc4tags.py:44
+msgid "KB"
+msgstr "Ko"
+
+#: templatetags/doc4tags.py:44
+msgid "MB"
+msgstr "Mo"
+
+#: templatetags/doc4tags.py:44
+msgid "GB"
+msgstr "Go"
+
+#: templatetags/doc4tags.py:44
+msgid "TB"
+msgstr "To"
+
+#: templatetags/doc4tags.py:44
+msgid "PB"
+msgstr "Po"
+
+#: templatetags/doc4tags.py:44
+msgid "EB"
+msgstr "Eo"
+
+#: templatetags/doc4tags.py:44
+msgid "ZB"
+msgstr "Zo"
+
+#: templatetags/doc4tags.py:44
+msgid "YB"
+msgstr "Yo"
+
+#: templatetags/doc4tags.py:45
+msgid "KiB"
+msgstr "Kio"
+
+#: templatetags/doc4tags.py:45
+msgid "MiB"
+msgstr "Mio"
+
+#: templatetags/doc4tags.py:45
+msgid "GiB"
+msgstr "Gio"
+
+#: templatetags/doc4tags.py:45
+msgid "TiB"
+msgstr "Tio"
+
+#: templatetags/doc4tags.py:45
+msgid "PiB"
+msgstr "Pio"
+
+#: templatetags/doc4tags.py:45
+msgid "EiB"
+msgstr "Eio"
+
+#: templatetags/doc4tags.py:45
+msgid "ZiB"
+msgstr "Zio"
+
+#: templatetags/doc4tags.py:45
+msgid "YiB"
+msgstr "Yio"
+
+#~ msgid "With Name"
+#~ msgstr "dont le nom"
+#~ msgid "Like"
+#~ msgstr "contient"
+
+#, fuzzy
+#~ msgid "Package Name"
+#~ msgstr "Taille du paquet"
+
+#, fuzzy
+#~ msgid "Current Filter"
+#~ msgstr "Catégorie courante"
+#~ msgid "Conflicts:"
+#~ msgstr "Conflits:"
+#~ msgid "files"
+#~ msgstr "fichiers"
+#~ msgid "Obsoletes:"
+#~ msgstr "Rends obsolète:"
+#~ msgid "Provides:"
+#~ msgstr "Fournit:"
+#~ msgid "Requires:"
+#~ msgstr "Requière:"
+#~ msgid "Suggests:"
+#~ msgstr "Suggère:"
+#~ msgid "%d byte(s)"
+#~ msgstr "%d octet(s)"
+#~ msgid "%s KB"
+#~ msgstr "%s Ko"
+#~ msgid "%s MB"
+#~ msgstr "%s Mo"
+#~ msgid "%s GB"
+#~ msgstr "%s Go"
+#~ msgid "%s TB"
+#~ msgstr "%s To"
+#~ msgid "%s PB"
+#~ msgstr "%s Po"
+#~ msgid "%(package)s Package:"
+#~ msgstr "Paquetage %(package)s :"
+#~ msgid "Size (kB):"
+#~ msgstr "Taille (ko) :"
+#~ msgid "English"
+#~ msgstr "Anglais"
+

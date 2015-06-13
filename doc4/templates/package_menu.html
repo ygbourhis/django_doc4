@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% load i18n doc4tags %}
+{% block body %}
+    {% block menu %}
+    <div class="menu">
+        <a class="{{menu_home}}" href="{% url package_list as link%}{% add_getrequest_to link %}">{% trans 'Home' %}</a>
+        {% if not viafullname %}
+        <a class="{{menu_package}}" href="{% url package_detail package.id as link%}{% add_getrequest_to link %}">{% trans 'Details' %}</a>
+        <a class="{{menu_file}}" href="{% url file_list package.id as link%}{% add_getrequest_to link %}">{% trans 'Files' %}</a>
+        <a class="{{menu_provide}}" href="{% url provide_list package.id as link%}{% add_getrequest_to link %}">{% trans 'Provides' %}</a>
+        <a class="{{menu_require}}" href="{% url require_list package.id as link%}{% add_getrequest_to link %}">{% trans 'Requires' %}</a>
+        <a class="{{menu_obsolete}}" href="{% url obsolete_list package.id as link%}{% add_getrequest_to link %}">{% trans 'Obsoletes' %}</a>
+        <a class="{{menu_conflict}}" href="{% url conflict_list package.id as link%}{% add_getrequest_to link %}">{% trans 'Conflicts' %}</a>
+        <a class="{{menu_suggest}}" href="{% url suggest_list package.id as link%}{% add_getrequest_to link %}">{% trans 'Suggests' %}</a>
+        <a class="{{menu_inunscript}}" href="{% url inunscript_detail package.id as link%}{% add_getrequest_to link %}">{% trans 'Scripts' %}</a>
+        <a class="{{menu_changelog}}" href="{% url changelog_detail package.id as link%}{% add_getrequest_to link %}">{% trans 'Changelog' %}</a>
+        {% else %}
+        <a class="{{menu_package}}" href="{% url fullname_package_detail package.fullname as link%}{% add_getrequest_to link %}">{% trans 'Details' %}</a>
+        <a class="{{menu_file}}" href="{% url fullname_file_list package.fullname as link%}{% add_getrequest_to link %}">{% trans 'Files' %}</a>
+        <a class="{{menu_provide}}" href="{% url fullname_provide_list package.fullname as link%}{% add_getrequest_to link %}">{% trans 'Provides' %}</a>
+        <a class="{{menu_require}}" href="{% url fullname_require_list package.fullname as link%}{% add_getrequest_to link %}">{% trans 'Requires' %}</a>
+        <a class="{{menu_obsolete}}" href="{% url fullname_obsolete_list package.fullname as link%}{% add_getrequest_to link %}">{% trans 'Obsoletes' %}</a>
+        <a class="{{menu_conflict}}" href="{% url fullname_conflict_list package.fullname as link%}{% add_getrequest_to link %}">{% trans 'Conflicts' %}</a>
+        <a class="{{menu_suggest}}" href="{% url fullname_suggest_list package.fullname as link%}{% add_getrequest_to link %}">{% trans 'Suggests' %}</a>
+        <a class="{{menu_inunscript}}" href="{% url fullname_inunscript_detail package.fullname as link%}{% add_getrequest_to link %}">{% trans 'Scripts' %}</a>
+        <a class="{{menu_changelog}}" href="{% url fullname_changelog_detail package.fullname as link%}{% add_getrequest_to link %}">{% trans 'Changelog' %}</a>
+        {% endif %}
+    </div>
+    {% endblock %}
+    {% block content %}{% endblock %}
+    {% block installform %}
+        <form action="" method="post">{% csrf_token %}
+        {{installform}}
+        <input type="submit" value="{% trans 'Install' %}" />
+        </form>
+    {% endblock %}
+    {% block apilink %}
+    <div>
+        <p>
+            {% trans 'Export all package details as:' %}
+            {% if not viafullname %}
+            <a href="{% url package_detail_api package.id as link%}{% apiurl link %}">xml</a>,
+            <a href="{% url package_detail_api package.id as link%}{% apiurl link 'json' %}">json</a>,
+            <a href="{% url package_detail_api package.id as link%}{% apiurl link 'yaml' %}">yaml</a>,
+            <a href="{% url package_detail_api package.id as link%}{% apiurl link 'pickle' %}">{% trans 'Python pickle object' %}</a>
+            {% else %}
+            <a href="{% url fullname_package_detail_api package.fullname as link%}{% apiurl link %}">xml</a>,
+            <a href="{% url fullname_package_detail_api package.fullname as link%}{% apiurl link 'json' %}">json</a>,
+            <a href="{% url fullname_package_detail_api package.fullname as link%}{% apiurl link 'yaml' %}">yaml</a>,
+            <a href="{% url fullname_package_detail_api package.fullname as link%}{% apiurl link 'pickle' %}">{% trans 'Python pickle object' %}</a>
+            {% endif %}
+        </p>
+    </div>
+    {% endblock %}
+{% endblock %}

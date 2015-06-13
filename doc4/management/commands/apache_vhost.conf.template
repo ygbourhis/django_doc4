@@ -1,0 +1,28 @@
+<VirtualHost *:80>
+    ServerAdmin {{ADMIN}}
+    ServerName  {{VHOSTNAME}}
+
+    DocumentRoot {{PROJECT_ROOT}}/
+
+    LogLevel warn
+    ErrorLog /var/log/httpd/{{PROJECT_NAME}}-error.log
+    CustomLog /var/log/httpd/{{PROJECT_NAME}}-access.log combined
+
+    WSGIScriptReloading On
+    WSGIDaemonProcess {{PROJECT_NAME}}_website
+    WSGIProcessGroup {{PROJECT_NAME}}_website
+    WSGIApplicationGroup {{PROJECT_NAME}}_website
+    WSGIPassAuthorization On
+
+    WSGIScriptAlias / {{PROJECT_PATH}}/apache.wsgi
+
+    <Location "/">
+        Order Allow,Deny
+        Allow from all 
+    </Location>
+
+    Alias /static {{STATIC_PATH}}
+    <Location "/static">
+        SetHandler None
+    </Location>
+</Virtualhost>

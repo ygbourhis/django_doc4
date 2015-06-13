@@ -1,0 +1,12 @@
+{% extends "package_menu.html" %}
+{% load i18n doc4tags %}
+
+{% block title %}
+    {% blocktrans with name=package.name %}{{name}} Changelog{% endblocktrans %}
+{% endblock %}
+
+{% block content %}
+    <dl>
+        <dt><strong>{% trans 'Changelog:' %}</strong></dt><dd>{{object.log|urlize|linebreaksbr|auto_obfuscate_emails}}</dd>
+    </dl>
+{% endblock %}

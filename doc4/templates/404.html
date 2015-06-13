@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load i18n doc4tags static %}
+{% get_static_prefix as STATIC_PREFIX %}
+{% block title %}
+    {% trans "Page not Found" %}
+{% endblock %}
+{% block body %}
+<div>
+    <p>
+        <br />
+        {% trans "Sorry, but we can't find" %} {{request_path}}<br />
+        {% trans "Please go back to the" %} <a href="javascript:history.back(1)">{% trans "previous page" %}</a> {% trans "and try another research" %}
+    </p>
+</div>
+{% endblock %}

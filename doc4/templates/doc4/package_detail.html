@@ -1,0 +1,33 @@
+{% extends "package_menu.html" %}
+{% load i18n doc4tags %}
+
+{% block title %}
+    {% blocktrans with name=package.name %}{{name}} details{% endblocktrans %}
+{% endblock %}
+
+{% block content %}
+    <dl>
+        <dt><strong>{% trans 'Package' %}</strong></dt><dd>{{object.fullname}}</dd>
+        <dt><strong>{% trans 'Summary' %}</strong></dt><dd>{{object.summary}}</dd>
+        <dt><strong>{% trans 'Description' %}</strong></dt><dd>{{object.description}}</dd>
+        <dt><strong>{% trans 'Homepage' %}</strong></dt><dd>{{object.url|urlize}}</dd>
+        {% if object.author_has_email %}
+            <dt><strong>{% trans 'Author' %}</strong></dt><dd><a href="mailto:{{object.obfuscated_author_email|safe}}">{{object.author}}</a></dd>
+        {% else %}
+            <dt><strong>{% trans 'Author' %}</strong></dt><dd>{{object.author}}</dd>
+        {% endif %}
+        <dt><strong>{% trans 'License' %}</strong></dt><dd>{{object.license}}</dd>
+        <dt><strong>{% trans 'Package Size' %}</strong></dt><dd>{{object.size|doc4filesizeformat:"True"}}</dd>
+        <dt><strong>{% trans 'Archive Size' %}</strong></dt><dd>{{object.archive_size|doc4filesizeformat:"True"}}</dd>
+        <dt><strong>{% trans 'Installed Size' %}</strong></dt><dd>{{object.installed_size|doc4filesizeformat:"True"}}</dd>
+        <dt><strong>{% trans 'Group' %}</strong></dt><dd>{{object.category}}</dd>
+        <dt><strong>{% trans 'Epoch' %}</strong></dt><dd>{{object.epoch}}</dd>
+        <dt><strong>{% trans 'Version' %}</strong></dt><dd>{{object.version}}</dd>
+        <dt><strong>{% trans 'Release' %}</strong></dt><dd>{{object.releas}}</dd>
+        <dt><strong>{% trans 'Build time' %}</strong></dt><dd>{{object.build_time}}</dd>
+        <dt><strong>{% trans 'Build host' %}</strong></dt><dd>{{object.build_host}}</dd>
+        <dt><strong>{% trans 'Source package' %}</strong></dt><dd>{{object.source}}</dd>
+        <dt><strong>{% trans 'Architecture' %}</strong></dt><dd>{{object.arch}}</dd>
+        <dt><strong>{% trans 'Checksum' %}</strong></dt><dd>{{object.checksum}}</dd>
+    </dl>
+{% endblock %}

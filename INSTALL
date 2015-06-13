@@ -1,0 +1,6 @@
+to install doc4 as a python module run:
+
+python doc4setup.py install
+django-admin.py startproject NameOfYourProject.
+
+Then, read the README and REQUIREMENTS files in the doc4 directory

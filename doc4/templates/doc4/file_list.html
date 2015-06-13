@@ -1,0 +1,24 @@
+{% extends "package_menu.html" %}
+{% load i18n doc4tags %}
+
+{% block title %}
+    {% blocktrans with name=package.name %}{{name}} files{% endblocktrans %}
+{% endblock %}
+
+{% block content %}
+    <table summary="{% blocktrans with name=package.fullname %}{{name}} files{% endblocktrans %}">
+    <caption>{% blocktrans with name=package.fullname %}Files in {{name}}:{% endblocktrans %}</caption>
+        <thead>
+            <tr>
+                <td>{% trans 'File' %}</td><td>{% trans 'Size' %}</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for object in object_list %}
+            <tr>
+                <td>{{object.path}}</td><td>{{object.size}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

@@ -1,0 +1,124 @@
+[
+    {
+        "pk": 1, 
+        "model": "doc4.license", 
+        "fields": {
+            "abbreviation": "ASL"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "doc4.license", 
+        "fields": {
+            "abbreviation": "CPL"
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "doc4.license", 
+        "fields": {
+            "abbreviation": "EPL"
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "doc4.license", 
+        "fields": {
+            "abbreviation": "GPLv2"
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "doc4.license", 
+        "fields": {
+            "abbreviation": "Python"
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "doc4.license", 
+        "fields": {
+            "abbreviation": "ZPL"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "doc4.licensedefinition", 
+        "fields": {
+            "description": "Apache License", 
+            "abbreviation": 1
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "doc4.licensedefinition", 
+        "fields": {
+            "description": "Apache Software License", 
+            "abbreviation": 1
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "doc4.licensedefinition", 
+        "fields": {
+            "description": "Apache Sotware License", 
+            "abbreviation": 1
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "doc4.licensedefinition", 
+        "fields": {
+            "description": "Common Public License", 
+            "abbreviation": 2
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "doc4.licensedefinition", 
+        "fields": {
+            "description": "Eclipse Public License", 
+            "abbreviation": 3
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "doc4.licensedefinition", 
+        "fields": {
+            "description": "GPL v2", 
+            "abbreviation": 4
+        }
+    }, 
+    {
+        "pk": 7, 
+        "model": "doc4.licensedefinition", 
+        "fields": {
+            "description": "GPL2", 
+            "abbreviation": 4
+        }
+    }, 
+    {
+        "pk": 8, 
+        "model": "doc4.licensedefinition", 
+        "fields": {
+            "description": "Python license", 
+            "abbreviation": 5
+        }
+    }, 
+    {
+        "pk": 9, 
+        "model": "doc4.licensedefinition", 
+        "fields": {
+            "description": "Zope Public License (ZPL)", 
+            "abbreviation": 6
+        }
+    }, 
+    {
+        "pk": 10, 
+        "model": "doc4.licensedefinition", 
+        "fields": {
+            "description": "Zope Public License", 
+            "abbreviation": 6
+        }
+    }
+]

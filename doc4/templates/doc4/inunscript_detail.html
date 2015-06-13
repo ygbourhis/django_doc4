@@ -1,0 +1,15 @@
+{% extends "package_menu.html" %}
+{% load i18n doc4tags %}
+
+{% block title %}
+    {% blocktrans with name=package.name %}{{name}} Install/Uninstall Scripts{% endblocktrans %}
+{% endblock %}
+
+{% block content %}
+    <dl>
+        <dt><strong>{% trans 'Pre-install script' %}</strong></dt><dd>{{object.prein|code_highlight|safe}}</dd>
+        <dt><strong>{% trans 'Post-install script' %}</strong></dt><dd>{{object.postin|code_highlight|safe}}</dd>
+        <dt><strong>{% trans 'Pre-uninstall script' %}</strong></dt><dd>{{object.prun|code_highlight|safe}}</dd>
+        <dt><strong>{% trans 'Post-uninstall script' %}</strong></dt><dd>{{object.postun|code_highlight|safe}}</dd>
+    </dl>
+{% endblock %}

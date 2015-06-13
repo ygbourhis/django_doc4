@@ -1,0 +1,2 @@
+#!/bin/bash
+/bin/env python manage.py dumpdata --indent 4 --exclude=auth --exclude=admin --exclude=sessions --exclude=contenttypes --exclude=sites

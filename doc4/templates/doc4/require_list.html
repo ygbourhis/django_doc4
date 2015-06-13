@@ -1,0 +1,24 @@
+{% extends "package_menu.html" %}
+{% load i18n doc4tags %}
+
+{% block title %}
+    {% blocktrans with name=package.name %}{{name}} requires{% endblocktrans %}
+{% endblock %}
+
+{% block content %}
+    <table summary="{% blocktrans with name=package.fullname %}{{name}} Requires{% endblocktrans %}">
+    <caption>{% blocktrans with name=package.fullname %}{{name}} Requires:{% endblocktrans %}</caption>
+        <thead>
+            <tr>
+                <td>{% trans 'Object' %}</td><td>{% trans 'Version' %}</td><td>{% trans 'Release' %}</td><td>{% trans 'Flags' %}</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for object in object_list %}
+            <tr>
+                <td>{{object.object}}</td><td>{{object.version}}</td><td>{{object.releas}}</td><td>{{object.flags}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

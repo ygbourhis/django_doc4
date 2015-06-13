@@ -1,0 +1,30 @@
+# -*- coding: utf-8 -*-
+
+## This file may be used under the terms of the GNU General Public
+## License version 2.0 as published by the Free Software Foundation
+## and appearing in the file LICENSE included in the packaging of
+## this file. 
+##
+## This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+## WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+##
+## See the NOTICE file distributed with this work for additional
+## information regarding copyright ownership.
+
+from django.conf.urls.defaults import *
+
+from django.conf import settings
+from doc4.urls import urlpatterns as doc4urlpatterns
+
+#because of http://code.djangoproject.com/ticket/9176 django bug:
+from django.conf import settings
+import os
+if hasattr(settings, 'DOC4_BASE_URL'):
+    DOC4_BASE_URL = os.path.join(settings.DOC4_BASE_URL, '')
+else:
+    DOC4_BASE_URL = ''
+
+urlpatterns = patterns('',
+    (r'^%s' % DOC4_BASE_URL, include(doc4urlpatterns)),
+)
+

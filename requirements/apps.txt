@@ -1,0 +1,6 @@
+django
+django-piston
+pygments
+chardet
+pyyaml
+cheetah

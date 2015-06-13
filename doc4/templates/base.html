@@ -1,0 +1,18 @@
+{% load i18n %}
+{% load static %}
+{% get_static_prefix as STATIC_PREFIX %}
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="{{ STATIC_PREFIX }}css/doc4.css" />
+        <link rel="shortcut icon" href="{{ STATIC_PREFIX }}img/rpm_package.png" />
+        <script language = "JavaScript" type = "text/JavaScript" src="{{ STATIC_PREFIX }}js/doc4.js"></script>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>
+            {% block title %}{% endblock %}
+        </title>
+    </head>
+    <body>
+        {% block body %}{% endblock %}
+    </body>
+</html>

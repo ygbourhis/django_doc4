@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load i18n doc4tags static %}
+{% get_static_prefix as STATIC_PREFIX %}
+{% block body %}
+    <div class="menu">
+        <a href="{% url package_list as link%}{% add_getrequest_to link %}">{% trans 'Home' %}</a>
+        <a href="{% url repository_list as link%}{% add_getrequest_to link %}">{% trans 'Repositories' %}</a>
+    </div>
+    {% block searchform %}{% endblock searchform %}
+    <div class="filter">
+        {% if filtered %}
+            <p onclick="showHide('filter');">{% trans 'Filter has eliminated'%} {{filtered}} {% trans 'Package(s)'%}{% if searched %} {% trans 'from search results'%} {% endif %} : {{total_packages}} {% trans 'left to visualize' %} (click to show/hide filter)</p>
+        {% else %}
+            <p onclick="showHide('filter');">{% trans 'Filter by (click to show/hide filter):' %}</p>
+        {% endif %}
+        <div id="filter" style="display:none;">
+            <form action="" method="get">
+                <fieldset>
+                    <legend>{% trans 'Filter' %} (<img src="{{ STATIC_PREFIX }}img/Question_mark_3d_small.png" alt="?" title="{% trans 'Use this to filter out your search results' %}"/>)</legend>
+                    {{filterform.as_ul}}
+                    <input type="submit" value="{% trans 'Apply' %}" />
+                </fieldset>
+            </form>
+        {% if filtersuggest %}
+            <form action="" method="get">
+                <fieldset>
+                    <legend onclick="showHide('suggest');">{% trans 'Filter Suggestion' %} (<img src="{{ STATIC_PREFIX }}img/Question_mark_3d_small.png" alt="?" title="{% trans 'Click to display a filter suggestion which should (in theory) give the same results as your research. This allows you to perform another research, which combined with this filter (if you decide to apply it) makes you have a fine-grain research.' %}"/>)</legend>
+                    <div id="suggest" style="display:none;">
+                        {{filtersuggest.as_ul}}
+                        <input type="submit" value="{% trans 'Apply' %}" />
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+        {% endif %}
+        <div>
+            <p>
+                
+            </p>
+        </div>
+    </div>
+    {% block categories %}{% endblock categories %}
+    {% block content %}{% endblock content %}
+{% endblock body %}

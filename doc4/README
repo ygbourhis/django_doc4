@@ -1,0 +1,43 @@
+Settings:
+=========
+
+Please use "settings.py.example" provided in this same directory to know
+how to configure your "settings.py" for usage whith this application.
+
+It is important to copy the section between:
+# Doc4 settings
+and:
+# Django settings
+in your own project's settings.
+
+
+URLS:
+====
+do not forget to include doc4.urls in your django project's URLS.
+
+If you include doc4 in an existing project, you need to add the
+following in the main project's urls.py (see doc4/urls.py.project_example):
+
+from django.conf import settings
+import os
+if hasattr(settings, 'DOC4_BASE_URL'):
+    DOC4_BASE_URL = os.path.join(settings.DOC4_BASE_URL, '')
+else:
+    DOC4_BASE_URL = ''
+
+urlpatterns = patterns('',
+    (r'^%s' % DOC4_BASE_URL, include(doc4urlpatterns)),
+)
+
+This is because because of the following django bug:
+http://code.djangoproject.com/ticket/9176
+which the django comunity is not willing to fix for the moment.
+(Ticket #9176's status is "closed: wontfix")
+
+Logging:
+========
+If you activate logging the same way as in the "settings.py.example"
+file, please create a "logs" directory in your django project's root
+directory.
+
+Please read the REQUIREMENTS file

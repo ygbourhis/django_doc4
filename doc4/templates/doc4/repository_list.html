@@ -1,0 +1,28 @@
+{% extends "main_menu.html" %}
+{% load i18n doc4tags %}
+
+{% block title %}
+    {% trans 'Package list' %}
+{% endblock %}
+
+{% block content %}
+{% show_paging repositories %}
+<div>
+    <table summary="{% trans 'Repositories:' %}">
+    <caption>{% trans 'repositories' %} ({{displayed_repositories}}/{{total_repositories}}) :</caption>
+        <thead>
+            <tr>
+                <td>{% trans 'Repository' %}</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for repository in repositories.object_list %}
+            <tr>
+                <td><a href="{% add_getrequest_to repository.get_absolute_url %}">{{repository}}</a> ({{repository.package_set.count}} {% trans 'Packages' %})</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% show_paging repositories %}
+{% endblock %}

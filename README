@@ -1,0 +1,19 @@
+This is an old project started at Mandriva to do an equivalent of               
+packages.debian.org, but for rpm distros.                                       
+                                                                                
+I uploaded it on GitHub to preserve the Code after the Mandriva company has  
+been shutdown. The original code was on an svn server, but I can't convert it   
+to git and keep the commit history because the server is down, git conversion
+needs the svn server to be still running, so the commit history is lost.                                   
+                                                                                
+This code was developed a while ago and used django-piston for the API part.   
+Django-piston is not maintained anymore and will not work with the current      
+django version. so all the API related code needs to be ported to               
+django-rest-framework.                                                          
+                                                                                
+The Database Schema was not created specificaly for this project, this project
+was developed to use an existing database.
+
+The web templates were without design, and need customization and CSS.
+
+Feel free to fork this project and improve it.

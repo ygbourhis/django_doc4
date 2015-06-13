@@ -1,0 +1,75 @@
+{% extends "main_menu.html" %}
+{% load i18n doc4tags %}
+
+{% block title %}
+    {% trans 'Package list' %}
+{% endblock %}
+
+{% block searchform %}
+<div class="search">
+<form action="" method="post">{% csrf_token %}
+    <fieldset>
+        <legend>{% trans 'Search:' %}</legend>
+        {{searchform}}
+        <input type="submit" value="{% trans 'Search' %}" />
+    </fieldset>
+</form>
+<p>
+{% if searched %}
+    {% trans 'Research found'%} {{total_packages_unfiltered}} {% trans 'Package(s)'%}
+{% endif %}
+</p>
+</div>
+{% endblock searchform %}
+
+{% block categories %}
+<div class="categories">
+    {% if category %}
+        <p>{% trans 'Current Category' %} : {{category}}({{category.nb_pkgs}})</p>
+    {% endif %}
+    {% if sub_categories %}
+    <p>{% if category %}{% trans 'Sub' %} {% endif %}{% trans 'Categories' %}:<br />
+        {% for sub_category in sub_categories %}
+        {% url category_search sub_category  as category_url %}
+        <a href="{% add_getrequest_to category_url %}">{{sub_category}}</a>({{sub_category.nb_pkgs}})
+        {% endfor %}
+    </p>
+    {% endif %}
+</div>
+{% endblock %}
+
+{% block content %}
+<div>
+    <p><br /></p>
+</div>
+{% show_paging packages %}
+<div>
+    <table summary="{% trans 'Packages' %}">
+    <caption>{% trans 'Packages' %} ({{displayed_packages}}/{{total_packages}}) :</caption>
+        <thead>
+            <tr>
+                <td>{% trans 'Name' %}</td><td>{% trans 'Summary' %}</td><td>{% trans 'rpm' %}</td><td>{% trans 'Repositories' %}</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for package in packages.object_list %}
+            {% url package_detail package.id as package_url%}
+            {% url fullname_package_detail package.fullname as fullname_url%}
+            <tr>
+                <td><a href="{% add_getrequest_to package_url %}">{{package.name}}</a></td><td>{{package.summary}}</td><td><a href="{% add_getrequest_to fullname_url %}">{{package.fullname}}</a></td><td><ul>{% for repo in package.repos.all %}<li><a href="{% add_getrequest_to repo.get_absolute_url %}">{{repo}}</a></li>{% endfor %}</ul></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+<div class="bottom">
+{% show_paging packages %}
+    <p>
+        {% trans 'Export result as:' %}
+        <a href="{% apiurl 'api_view_name' 'xml' 'True' %}">xml</a>,
+        <a href="{% apiurl 'api_view_name' 'json' 'True' %}">json</a>,
+        <a href="{% apiurl 'api_view_name' 'yaml' 'True' %}">yaml</a>,
+        <a href="{% apiurl 'api_view_name' 'pickle' 'True'%}">{% trans 'Python pickle object' %}</a>
+    </p>
+</div>
+{% endblock %}

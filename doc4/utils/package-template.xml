@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<doc4 version="0.1" xmlns="http://purl.org/doc4/0.1">
+<package>
+  <type name="rpm" version=$rpmversion />
+  <name>$name</name>
+  <filename>$fullname</filename>
+  <arch>$arch</arch>
+  <version epoch=$epoch ver=$version rel=$release />
+  <checksum type="sha">$checksum</checksum>
+  <summary>$summary</summary>
+  <description>
+  $description
+  </description>
+  <packager name=$packager email=$packager_email />
+  <url>$url</url>
+  <build time=$buildtime host=$buildhost />
+  <size package=$packagesize installed=$size archive=$archivesize />
+  <license>$license</license>
+  <group>$group</group>
+  <source-package>$srpm</source-package>
+  <requires>
+     #for $item in $requires
+     <entry name="$item[0]" flags="$item[1]" epoch="$item[2]" version="$item[3]" release="$item[4]"/>
+     #end for
+  </requires>
+  <provides>
+     #for $item in $provides
+     <entry name="$item[0]" flags="$item[1]" epoch="$item[2]" version="$item[3]" release="$item[4]"/>
+     #end for
+  </provides>
+  <conflicts>
+     #for $item in $conflicts
+     <entry name="$item[0]" flags="$item[1]" epoch="$item[2]" version="$item[3]" release="$item[4]"/>
+     #end for
+  </conflicts>
+  <suggests>
+     #for $item in $suggests
+     <entry name="$item[0]" flags="$item[1]" epoch="$item[2]" version="$item[3]" release="$item[4]"/>
+     #end for
+  </suggests>
+  <obsoletes>
+     #for $item in $obsoletes
+     <entry name="$item[0]" flags="$item[1]" epoch="$item[2]" version="$item[3]" release="$item[4]"/>
+     #end for
+  </obsoletes>
+  <scripts>
+    <prein>
+    $prein
+    </prein>
+    <postin>
+    $postin
+    </postin>
+    <preun>
+    $preun
+    </preun>
+    <postun>
+    $postun
+    </postun>
+  </scripts>
+#if $files
+    #for $file in $files
+  <file type="$file.data.type" size="$file.data.size" cat="$file.data.cat">$file.path</file> 
+    #end for
+#end if
+#if $extra_files
+    #for $archive in $extra_files
+        #for $file in $extra_files[$archive]
+        #if $file.path
+  <file type="$file.data.type" size="$file.data.size" extra="1" cat="$file.data.cat">$file.path</file>
+        #end if
+        #end for
+    #end for
+#end if
+#if $tfiles
+    #for $file in $tfiles
+    #if $file
+  <file>$file</file>
+    #end if
+    #end for 
+#end if
+  <changelog>
+$changelog
+  </changelog>
+</package>
+</doc4>
